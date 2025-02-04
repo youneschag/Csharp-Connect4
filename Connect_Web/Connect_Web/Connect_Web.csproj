@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <Folder Include="wwwroot\Styles\" />
+    <Folder Include="wwwroot\Scripts\" />
+    <Folder Include="wwwroot\Images\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Styles\site.css" />
+    <None Remove="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Styles\" />
+    <Content Remove="wwwroot\Scripts\" />
+    <Content Remove="wwwroot\Images\connect4.png" />
+    <Content Remove="wwwroot\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\Styles\_Layout.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Images\connect4.png" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,189 @@
+﻿/* Style général */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 70vh;
+}
+
+.form-container {
+    background-color: #269ced;
+    padding: 20px;
+    border-radius: 30px;
+    width: 40%;
+    color: white;
+}
+
+    .form-container h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-container .form-group {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .form-container label {
+        font-size: 15px;
+        display: block;
+        margin-bottom: 5px;
+        color: white;
+    }
+
+    .form-container input {
+        font-size: 15px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 30px;
+        border: none;
+        background-color: #f1f1f1;
+        margin-bottom: 15px;
+        color: black;
+    }
+
+    .form-container .btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+        font-size: 16px;
+        display: block;
+        margin: 0 auto; /* Pour centrer les boutons */
+    }
+
+/* Center "ou continuer avec" with lines */
+.continue-with {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+    .continue-with::before,
+    .continue-with::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: white;
+        margin: 0 10px;
+    }
+
+.text-container {
+    max-width: 45%;
+    font-size: 24px;
+    color: black;
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Agrandir le texte du lien "Déjà inscrit?" */
+.text-light {
+    font-size: 18px; /* Augmentation de la taille de la police */
+    color: #dcdcdc; /* Couleur grise pour le lien */
+}
+
+    .text-light:hover {
+        color: white; /* Couleur blanche au survol */
+    }
+
+/* Conteneur pour afficher les deux pop-ups côte à côte */
+.popup-container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#playerPopup {
+    background: white;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    position:fixed;
+    top: 35%;
+    left: 20%;
+}
+
+#popupContentPlayer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    #popupContentPlayer button:hover {
+        background: #0056b3;
+    }
+
+#listPopupContent {
+    background: white;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    max-height: 350px;
+    overflow-y: auto;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+}
+
+/* Styles pour le tableau */
+#listTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: 10px;
+}
+
+    #listTable th, #listTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    /* Effet de survol */
+    #listTable tr:hover {
+        background-color: #e0f7fa; /* Bleu ciel */
+        cursor: pointer;
+    }
+
+    #listTable th {
+        background-color: #007BFF;
+        color: white;
+        text-align: center;
+    }
+
+.winner {
+    color: green;
+    font-weight: bold;
+}
+
+.loser {
+    color: red;
+    font-weight: normal;
+}

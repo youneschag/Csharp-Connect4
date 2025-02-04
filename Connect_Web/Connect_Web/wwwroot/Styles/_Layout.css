@@ -1,0 +1,51 @@
+﻿/* Couleur de la barre de navigation et espacement */
+.custom-navbar {
+    background-color: #269ced !important;
+}
+
+    .custom-navbar .navbar-brand {
+        font-size: 1rem; /* Taille du texte plus grande */
+        color: white; /* Couleur du texte */
+    }
+
+    .custom-navbar .navbar-nav .nav-link {
+        font-size: 1rem; /* Taille des liens plus grande */
+        color: #fff;
+    }
+
+.nav-item {
+    margin: 5px;
+}
+
+/* Personnalisation du bouton du menu mobile */
+.navbar-toggler {
+    border: white; /* Bordure blanche */
+}zz
+
+/* Icônes du bouton du menu en blanc */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28white, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+    .navbar-toggler-icon::before {
+        font-family: FontAwesome;
+        content: "\f0c9"; /* fa-bars, fa-navicon */
+        font-size: 20px;
+    }
+
+/* Ajustements pour les liens de navigation dans le menu mobile */
+.navbar-collapse {
+    background-color: #269ced; /* Couleur de fond du menu en mode mobile */
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+
+    .navbar-nav .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+    }

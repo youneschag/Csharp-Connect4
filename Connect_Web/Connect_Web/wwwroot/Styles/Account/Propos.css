@@ -1,0 +1,30 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.propos-container {
+    display: flex;
+    justify-content: space-between; /* Ensures even space between the two columns */
+    align-items: center;
+    height: 90vh; /* Full viewport height to center vertically */
+}
+
+.propos-text {
+    max-width: 90%; /* Ensure it takes up the other half */
+    color: black;
+    font-size: 26px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    flex-direction: column;
+    margin-left : 30px;
+    justify-content: center; /* Center text vertically */
+}
+
+    .propos-text ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .propos-text p, .propos-text ul {
+        margin: 0 0 20px;
+    }

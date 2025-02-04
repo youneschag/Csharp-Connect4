@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Styles/Account/Connect.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/Account/Connect.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="form-container">
+            <h2>Se connecter</h2>
+            <form id="connectForm">
+                <div class="form-group">
+                    <label>Nom d'utilisateur</label>
+                    <input type="text" name="username" id="username" placeholder="prénom.nom" required />
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" id="password" placeholder="Veuillez saisir votre mot de passe" required />
+                </div>
+                <button type="submit" class="btn btn-success">Se connecter</button>
+                <div class="align-right">
+                    <a href="/Account/Sign" class="text-light">Vous n'avez pas de compte ? S'inscrire</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="text-container">
+            <p>
+                Bienvenue dans notre application de jeu Puissance 4 ! Nous sommes ravis de vous offrir une expérience de jeu en ligne immersive où stratégie et plaisir se rejoignent.
+                Que vous soyez novice ou expert, relevez le défi et affrontez vos amis ou d’autres joueurs pour aligner quatre jetons et remporter la victoire.
+            </p>
+            <p>
+                Préparez-vous à plonger dans des parties rapides et passionnantes ! Profitez d’une interface conviviale, conçue pour une expérience de jeu fluide et engageante.
+                Bonne chance, et que le meilleur stratège gagne !
+            </p>
+            <div class="align-right">
+                <a href="https://regentsctr.uni.edu/sites/default/files/games/Games/Connect_Four/Connect_Four_Rules.pdf" class="btn btn-success" target="_blank" rel="noopener noreferrer">Plus d'info?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur parent pour les deux pop-ups -->
+    <div class="popup-container" style="display: none;" id="popupContainer">
+        <!-- Pop-up principal pour choisir le type de joueur -->
+        <div id="overlayPlayer">
+            <div id="playerPopup">
+                <p>Salut <strong><span id="usernameDisplay"></span></strong> 👋, choisissez votre mode de jeu :</p>
+                <div id="popupContentPlayer" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+                    <button id="hostButton" style="padding: 10px; border: none; border-radius: 30px; background-color: #007BFF; color: white; cursor: pointer;">Liste des parties <strong>Hôte</strong></button>
+                    <button id="inviteButton" style="padding: 10px; border: none; border-radius: 30px; background-color: #28A745; color: white; cursor: pointer;">Liste des parties <strong>Invité</strong></button>
+                </div>
+                <button id="inviteGame" style="margin-top: 20px; padding: 10px; border: none; border-radius: 30px; background-color: #FF8000; color: white; cursor: pointer;">Rejoindre une partie</button>
+                <button id="newGame" style="margin-top: 20px; margin-left: 100px; padding: 10px; border: none; border-radius: 30px; background-color: #FFC107; color: white; cursor: pointer;">Nouvelle partie</button>
+            </div>
+        </div>
+
+        <!-- Pop-up pour la liste des parties -->
+        <div id="listPopup" style="display: none;">
+            <div id="listPopupContent">
+                <!-- Contenu sera injecté dynamiquement par JavaScript -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const GetHostGamesUrl = '@Url.Action("GetHostGames")' + '?username=';
+    const GetGuestGamesUrl = '@Url.Action("GetGuestGames")' + '?username=';
+    const CheckUserExistsUrl = '@Url.Action("CheckUserExists")' + '?GuestName=';
+</script>

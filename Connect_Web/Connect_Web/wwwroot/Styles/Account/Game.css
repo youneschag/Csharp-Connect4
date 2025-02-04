@@ -1,0 +1,267 @@
+﻿.container-fluid {
+    display: flex;
+}
+
+.left-panel {
+    width: 25%; /* Largeur du bloc de gauche */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #ddd; /* Séparation visuelle */
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.right-panel {
+    width: 75%; /* Largeur du bloc de droite */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.list-container {
+    margin-bottom: 20px;
+    transition: max-height 0.3s ease; /* Animation pour les transitions */
+}
+
+.list-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+    .list-header:hover {
+        background-color: #f0f0f0;
+    }
+
+.game-list {
+    list-style-type: none;
+    display: none;
+    margin: 0;
+    overflow-y: scroll;
+    transition: max-height 0.3s ease; /* Animation pour ouvrir/fermer */
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+    .game-list li {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        margin-bottom: 5px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .game-list.open {
+        max-height: 145px; /* Hauteur maximale quand la liste est ouverte */
+    }
+
+    .game-list li:hover {
+        background-color: #f0f8ff;
+    } 
+
+.arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease; /* Animation pour la rotation */
+}
+
+    .arrow.open {
+        transform: rotate(180deg); /* Rotation de 180 degrés */
+    }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 70px); /* 7 colonnes */
+    grid-template-rows: repeat(6, 70px);
+    justify-content: center;
+    gap: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
+.grid-item {
+    width: 70px;
+    height: 70px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.circle {
+    width: 60px; /* Augmentez la taille du cercle */
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+/* Classes pour les jetons de couleur */
+.token-yellow {
+    background-color: yellow;
+}
+
+.token-red {
+    background-color: red;
+}
+
+#timer {
+    background-color: #e0e0e0;
+    color: black;
+    font-weight: bold;
+    width: 50%;
+    margin: 20px auto;
+}
+
+/* Styles personnalisés pour les colonnes des joueurs et les photos */
+.player-column {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+.player-photo {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.change-avatar-icon {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 20px;
+    color: #007BFF;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+    .change-avatar-icon:hover {
+        transform: scale(1.2);
+    }
+
+#avatarList {
+    display: none; /* Caché par défaut */
+    position: absolute;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    top: 90px; /* Positionner sous le cercle */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-name {
+    margin-top: 10px;
+}
+
+.moves-container {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.moves-list {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.move {
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.move-yellow {
+    color: orange;
+}
+
+.move-red {
+    color: red;
+}
+
+#listPopup {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#listPopupContent {
+    background: white;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    max-height: 350px;
+    overflow-y: auto;
+    position: fixed;
+    top: 35%;
+    left: 40%;
+}
+
+.popup-container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#listPopupContent {
+    background: white;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    max-height: 350px;
+    overflow-y: auto;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+}

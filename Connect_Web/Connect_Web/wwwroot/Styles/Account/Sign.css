@@ -1,0 +1,240 @@
+﻿/* Style général */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #269ced;
+    padding: 20px;
+    border-radius: 30px;
+    width: 40%;
+    color: white;
+}
+
+    .form-container h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-container .form-group {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .form-container label {
+        font-size: 15px;
+        display: block;
+        margin-bottom: 5px;
+        color: white;
+    }
+
+    .form-container input {
+        font-size: 15px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 30px;
+        border: none;
+        background-color: #f1f1f1;
+        margin-bottom: 15px;
+        color: black;
+    }
+
+    .form-container .btn {
+        width: 100%;
+        padding: 10px;
+        border-radius: 30px;
+        color: white;
+        font-size: 16px;
+        display: block;
+        margin: 0 auto; /* Pour centrer les boutons */
+    }
+
+/* Center "ou continuer avec" with lines */
+.continue-with {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+    .continue-with::before,
+    .continue-with::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: white;
+        margin: 0 10px;
+    }
+
+.text-container {
+    max-width: 45%;
+    font-size: 24px;
+    color: black;
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Agrandir le texte du lien "Déjà inscrit?" */
+.text-light {
+    font-size: 18px; /* Augmentation de la taille de la police */
+    color: #dcdcdc; /* Couleur grise pour le lien */
+}
+
+    .text-light:hover {
+        color: white; /* Couleur blanche au survol */
+    }
+
+/* Style du popup */
+.popup {
+    display: none; /* Le popup est masqué par défaut */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #269ced;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    padding: 20px;
+}
+
+/* Style du contenu du popup */
+.popup-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#overlayClient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Griser l'arrière-plan */
+    z-index: 1000; /* Assurez-vous que c'est au-dessus de tout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto; /* Désactiver les clics en dehors de la popup */
+}
+
+/* Styles de la popup */
+#clientPopup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    z-index: 1001;
+    min-width: 200px;
+    text-align: center;
+}
+
+/* Style de chaque ligne client */
+.client-row {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+    /* Surlignage au survol */
+    .client-row:hover {
+        background-color: #269ced;
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Dernière ligne sans bordure */
+    .client-row:last-child {
+        border-bottom: none;
+    }
+
+#overlayFunction {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Griser l'arrière-plan */
+    z-index: 1000; /* Assurez-vous que c'est au-dessus de tout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto; /* Désactiver les clics en dehors de la popup */
+}
+
+/* Styles de la popup */
+#functionPopup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    z-index: 1001;
+    min-width: 200px;
+    text-align: center;
+}
+
+#popupContentFunction {
+    margin-bottom: 10px;
+}
+
+/* Style de chaque ligne fonction */
+.function-row {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+    /* Surlignage au survol */
+    .function-row:hover {
+        background-color: #269ced;
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Dernière ligne sans bordure */
+    .function-row:last-child {
+        border-bottom: none;
+    }
+
+/* Conteneur pour le bouton retour */
+.button-container {
+    text-align: right; /* Place le bouton à droite */
+    margin-top: 10px;
+}
+
+/* Style du bouton Retour */
+.back-button {
+    background-color: #007BFF; /* Bleu */
+    color: white; /* Texte blanc */
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+    .back-button:hover {
+        background-color: #0056b3; /* Bleu foncé au survol */
+    }
