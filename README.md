@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Lancement du jeu Connect 4
 
@@ -271,3 +272,6 @@ Si besoin, supprimez la base de données puis recréez-la :
   rm Connect.db
   dotnet ef database update
 ```
+=======
+# Csharp-Connect4
+>>>>>>> 5275d25e3bc3f389b016d8ecf794bc816d6ecb57
